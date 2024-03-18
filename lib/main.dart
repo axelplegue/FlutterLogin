@@ -28,8 +28,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
       onPrimary: Colors.white,
-      backgroundColor:
-          Color(0xFF3C0F4B), // Corregido de 'primary' a 'backgroundColor'
+      backgroundColor: Color(0xFF3C0F4B), // Corregido de 'primary' a 'backgroundColor'
       minimumSize: Size(double.infinity, 56),
       padding: EdgeInsets.symmetric(vertical: 16),
       shape: RoundedRectangleBorder(
@@ -55,21 +54,14 @@ class LoginScreen extends StatelessWidget {
                 Text(
                   'Welcome Back!',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontFamily: 'Franklin Gothic Demi'),
+                  style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold, color: Colors.white, fontFamily: 'Franklin Gothic Demi'),
                 ),
                 Text(
                   'Please sign into your account',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 16.0,
-                      color: Color(0xFF494949),
-                      fontFamily: 'Franklin Gothic Demi'),
+                  style: TextStyle(fontSize: 16.0, color: Color(0xFF494949), fontFamily: 'Franklin Gothic Demi'),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.12),
                 TextField(
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
@@ -84,21 +76,42 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20.0),
-                TextField(
-                  style: TextStyle(color: Colors.white),
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: 'Password',
-                    hintStyle: TextStyle(color: Colors.white70),
-                    filled: true,
-                    fillColor: Color(0xFF494949),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                      borderSide: BorderSide.none,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    TextField(
+                      style: TextStyle(color: Colors.white),
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        hintText: 'Password',
+                        hintStyle: TextStyle(color: Colors.white70),
+                        filled: true,
+                        fillColor: Color(0xFF494949),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                          borderSide: BorderSide.none,
+                        ),
+                      ),
                     ),
-                  ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: TextButton(
+                        onPressed: () {
+                          // Añade la funcionalidad de olvidar contraseña aquí
+                        },
+                        child: Text(
+                          "Forgot Password?",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontFamily: 'Franklin Gothic Demi',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                SizedBox(height: 70.0),
+                SizedBox(height: 80.0),
                 ElevatedButton(
                   child: Text('Sign In'),
                   onPressed: () {},
@@ -107,12 +120,10 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(height: 20.0),
                 ElevatedButton.icon(
                   icon: FaIcon(FontAwesomeIcons.google, color: Colors.black),
-                  label: Text('Sign in with Google',
-                      style: TextStyle(color: Colors.black)),
+                  label: Text('Sign in with Google', style: TextStyle(color: Colors.black)),
                   onPressed: () {},
                   style: buttonStyle.copyWith(
-                    backgroundColor: MaterialStateProperty.all(
-                        Colors.white), // Ajuste para color
+                    backgroundColor: MaterialStateProperty.all(Colors.white),
                   ),
                 ),
                 SizedBox(height: 20.0),
@@ -121,8 +132,7 @@ class LoginScreen extends StatelessWidget {
                   label: Text('Sign in with Facebook'),
                   onPressed: () {},
                   style: buttonStyle.copyWith(
-                    backgroundColor: MaterialStateProperty.all(
-                        Colors.blueAccent), // Ajuste para color
+                    backgroundColor: MaterialStateProperty.all(Colors.blueAccent),
                   ),
                 ),
                 SizedBox(height: 40.0),
@@ -134,13 +144,10 @@ class LoginScreen extends StatelessWidget {
                     children: <TextSpan>[
                       TextSpan(
                         text: 'Sign Up',
-                        style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            color: Color(0xFF4E0566)),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            // Acción para Sign Up
-                          },
+                        style: TextStyle(decoration: TextDecoration.underline, color: Color(0xFF4E0566)),
+                        recognizer: TapGestureRecognizer()..onTap = () {
+                          // Acción para Sign Up
+                        },
                       ),
                     ],
                   ),
