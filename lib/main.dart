@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:login_flutter/forgot_password_screen.dart';
 import 'auth_controller.dart';
 import 'login_screen.dart';
 import 'signup_screen.dart';
@@ -31,9 +32,15 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      return _authController.selectedIndex.value == 0
-          ? LoginScreen()
-          : SignUpScreen();
+      if (_authController.selectedIndex.value == 0) {
+        return LoginScreen();
+      } else if (_authController.selectedIndex.value == 1){
+        return SignUpScreen();
+      }
+      else if (_authController.selectedIndex.value == 2){
+        return ForgotPasswordScreen();
+      }
+      return LoginScreen();
     });
   }
 }

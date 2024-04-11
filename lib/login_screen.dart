@@ -84,6 +84,9 @@ class LoginScreen extends StatelessWidget {
                       child: TextButton(
                         onPressed: () {
                           // Añade la funcionalidad de olvidar contraseña aquí
+                          // Acción para cambiar a la pestaña de registro
+                        _authController.changeTab(2);
+
                         },
                         child: Text(
                           "Forgot Password?",
@@ -93,6 +96,7 @@ class LoginScreen extends StatelessWidget {
                             fontFamily: 'Franklin Gothic Demi',
                           ),
                         ),
+                        
                       ),
                     ),
                   ],
